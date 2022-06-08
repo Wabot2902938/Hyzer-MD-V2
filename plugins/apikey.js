@@ -27,7 +27,6 @@ let handler = async m => m.reply(`
 ├➥ *Zeksapi* = apivinz
 ├➥ *shizukaapi* = itsmeiky633
 ├➥ *apivhtear* = 1BlnApiIkyPake
-├➥ *zenz* = fiktod
 ┃ 「 *Pesan Dari My Owner* 」
 ┃ > *Trimakasih Telah Membantu*
 ┃ *Jalanya Bot Ini :)*
