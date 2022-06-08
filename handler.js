@@ -246,7 +246,7 @@ module.exports = {
                     if (!isNumber(user.level)) user.level = 0
                     if (!user.job) user.job = 'Pengangguran'
                     if (!user.lbars) user.lbars = '[▒▒▒▒▒▒▒▒▒]'
-                    if (!user.premium) user.premium = false
+                    if (!user.premium) user.premium = true
                     if (!user.premium) user.premiumTime= 0
                     if (!user.role) user.role = 'Newbie ㋡'
                     if (!('autolevelup' in user)) user.autolevelup = true
@@ -400,7 +400,7 @@ module.exports = {
                     name: this.getName(m.sender),
                     age: -1,
                     regTime: -1,
-                    premium: false, 
+                    premium: true, 
                     premiumTime: 0,
                     job: 'Pengangguran', 
                     lbars: '[▒▒▒▒▒▒▒▒▒]', 
@@ -425,7 +425,7 @@ module.exports = {
                     if (!('delete' in chat)) chat.delete = true
                     if (!('antiLink' in chat)) chat.antiLink = true
                     if (!('viewonce' in chat)) chat.viewonce = false
-                    if (!('antiToxic' in chat)) chat.antiToxic = false
+                    if (!('antiToxic' in chat)) chat.antiToxic = true
                 } else global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: true,
@@ -479,8 +479,8 @@ module.exports = {
             let participants = (m.isGroup ? groupMetadata.participants : []) || []
             let user = (m.isGroup ? participants.find(u => conn.decodeJid(u.id) === m.sender) : {}) || {} // User Data
             let bot = (m.isGroup ? participants.find(u => conn.decodeJid(u.id) == this.user.jid) : {}) || {} // Your Data
-            let isAdmin = user && user.admin || false // Is User Admin?
-            let isBotAdmin = bot && bot.admin || false // Are you Admin?
+            let isAdmin = user && user.admin || true // Is User Admin?
+            let isBotAdmin = bot && bot.admin || true // Are you Admin?
             for (let name in global.plugins) {
                 let plugin = global.plugins[name]
                 if (!plugin) continue
@@ -708,7 +708,7 @@ module.exports = {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang 1'))
-                                this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, '', "ok", "huuu", null)
+                                this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, '', "Jangan Di Pencet🗿", "huuu", null)
                                 }
                     }
                 }
