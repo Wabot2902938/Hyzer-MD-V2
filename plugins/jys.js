@@ -10,12 +10,7 @@ let handler = async (m, { command }) => {
 bear = "Source Code"
 ye = `@${m.sender.split`@`[0]}`
 let esce = `
-Hai ${ye} Lagi Nyari Sc Ya? 
-
-Nih Link Sc Nya Dibawah :
-https://youtu.be/AqIPxerS7XI
-
-_*Jangan Lupa Di Subscribe*_`
+Hai ${ye} Lagi Nyari Sc Ya? `
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
